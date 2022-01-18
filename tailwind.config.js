@@ -6,9 +6,6 @@ module.exports = {
 			backgroundImage: {
 				background: "url('src/images/background.png')",
 			},
-			color: {
-        'regal-blue': '#243c5a',
-			},
 		},
 	},
 	variants: {

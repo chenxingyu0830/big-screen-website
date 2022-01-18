@@ -3,7 +3,6 @@ import { Routes, HashRouter } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Home } from './pages/home';
 import { Config } from './pages/config';
-import background from '../images/background.png';
 
 function App() {
 

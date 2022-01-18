@@ -1,0 +1,31 @@
+main {
+	display: grid;
+	grid-template:
+		"box1 box4 box5"
+		"box2 box4 box6"
+		"box3 box4 box7";
+	grid-template-columns: 25rem 1fr 25rem;
+	grid-template-rows: 1fr 1fr 1fr;
+
+	> .section1 {
+		grid-area: box1;
+	}
+	> .section2 {
+		grid-area: box2;
+	}
+	> .section3 {
+		grid-area: box3;
+	}
+	> .section4 {
+		grid-area: box4;
+	}
+	> .section5 {
+		grid-area: box5;
+	}
+	> .section6 {
+		grid-area: box6;
+	}
+	> .section7 {
+		grid-area: box7;
+	}
+}
