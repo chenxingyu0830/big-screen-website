@@ -9,21 +9,21 @@ interface ChindProps {
     data: CountryInfo,
 }
 
-export const Chart5: React.FunctionComponent<ChindProps> = ({ data, ...restProps }) => {
+export const Chart7: React.FunctionComponent<ChindProps> = ({ data, ...restProps }) => {
     const divRef = useRef(null);
     const myChart = useRef(null);
 
-    const zhejiangInfo = _.find(data?.results, it => it.provinceShortName === "浙江");
-    const allCount = _.sum(_.map(zhejiangInfo?.cities, c => c.currentConfirmedCount));
-    const citys = _.chain(zhejiangInfo?.cities)
+    const citys = _.chain(data?.results)
+        .orderBy("currentConfirmedCount", "desc")
+        .take(6)
         .map(c => {
             return {
-                name: c.cityName,
-                value: _.floor(c.currentConfirmedCount / allCount * 100, 2),
+                name: c.countryName,
+                value: c.currentConfirmedCount,
             }
         })
-        .filter(it => it.value > 0)
-        .value()
+        .value();
+    console.log("citys", citys)
 
     useEffect(() => {
         console.log("citys", citys);
@@ -48,7 +48,7 @@ export const Chart5: React.FunctionComponent<ChindProps> = ({ data, ...restProps
                     itemWidth: px(30),
                     itemHeight: px(30),
                     formatter(name) {
-                        const value = _.find(citys, i => i.name === name)?.value + '%';
+                        const value = _.find(citys, i => i.name === name)?.value + '人';
                         return name + ' ' + value;
                     }
                 },
@@ -56,9 +56,10 @@ export const Chart5: React.FunctionComponent<ChindProps> = ({ data, ...restProps
                     {
                         center: ['35%', '50%'],
                         type: 'pie',
-                        radius: '90%',
+                        radius: ['60%', '90%'],
                         label: { show: false },
                         labelLine: { show: false },
+                        avoidLabelOverlap: true,
                         data: citys,
                         emphasis: {
                             itemStyle: {

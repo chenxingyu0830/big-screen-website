@@ -16,6 +16,8 @@ export const Chart1: React.FunctionComponent<ChindProps> = ({ data, ...restProps
     const [currentAreas, setCurrentAreas] = useState([]);
 
     useEffect(() => {
+        myChart.current = echarts.init(divRef.current);
+
         const chinaInfo = _.filter(data?.results, it => it.countryName === "中国")
         const areaChunks = _.chunk(chinaInfo, 6) ?? [];
         const currentAreas = areaChunks[indexRef.current];

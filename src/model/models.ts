@@ -31,10 +31,16 @@ export interface AreaInfo {
 }
 
 export interface City {
+    /** 城市英文名称 */
+    cityEnglishName: string;
     /** 城市名称 */
     cityName: string;
-    /** 现存确诊人数，值为confirmedCount - curedCount - deadCount */
-    currentConfirmedCount: number;
     /** 累计确诊人数 */
     confirmedCount: number;
+    /** 现存确诊人数，值为confirmedCount - curedCount - deadCount */
+    currentConfirmedCount: number;
+    /** 治愈人数 */
+    curedCount: number;
+    /** 死亡人数 */
+    deadCount: number;
 }

@@ -1,4 +1,5 @@
-import React, { Suspense, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import _ from "lodash";
 import dayjs from "dayjs";
 import useSWR from "swr";
 import PositionSvg from "../images/position.svg";
@@ -6,8 +7,9 @@ import "./home.scss";
 import { Chart1 } from "./chart/chrat-1";
 import { Chart2 } from "./chart/chrat-2";
 import { Chart3 } from "./chart/chart-3";
-import _ from "lodash";
 import { Chart5 } from "./chart/chart-5";
+import { Chart6 } from "./chart/chart-6";
+import { Chart7 } from "./chart/chart-7";
 
 const fetcher = (url: RequestInfo) => fetch(url).then((res) => res.json());
 
@@ -69,12 +71,12 @@ export const Home = () => {
                     {useMemo(() => <Chart5 data={data} />, [data])}
                 </section>
                 <section className="section6">
-                    <div className="title">测试</div>
-                    <div>123</div>
+                    <div className="title">杭州市各项数据统计</div>
+                    {useMemo(() => <Chart6 data={data} />, [data])}
                 </section>
                 <section className="section7">
-                    <div className="title">测试</div>
-                    <div>123</div>
+                    <div className="title">疫情主要国家确诊人数统计</div>
+                    {useMemo(() => <Chart7 data={data} />, [data])}
                 </section>
             </main>
         </div>
