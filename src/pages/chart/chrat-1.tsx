@@ -41,7 +41,6 @@ export const Chart1: React.FunctionComponent<ChindProps> = ({ data, ...restProps
     }, []);
 
     const getChart = (currentAreas) => {
-        console.log("getChart!!!", currentAreas)
         myChart.current.setOption(
             createEchartsOptions({
                 xAxis: {

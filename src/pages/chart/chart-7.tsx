@@ -23,11 +23,8 @@ export const Chart7: React.FunctionComponent<ChindProps> = ({ data, ...restProps
             }
         })
         .value();
-    console.log("citys", citys)
 
     useEffect(() => {
-        console.log("citys", citys);
-
         myChart.current = echarts.init(divRef.current);
         getChart(citys);
     }, []);

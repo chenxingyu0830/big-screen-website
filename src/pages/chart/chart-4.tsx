@@ -16,8 +16,6 @@ export const Chart4: React.FunctionComponent<ChindProps> = ({ data, ...restProps
 
     const overAll = _.first(data.results);
 
-    console.log("overAll", overAll.deadCount)
-
     useEffect(() => {
         var myChart = echarts.init(divRef.current);
         // @ts-ignore
