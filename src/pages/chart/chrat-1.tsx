@@ -68,7 +68,12 @@ export const Chart1: React.FunctionComponent<ChindProps> = ({ data, ...restProps
                 series: [
                     {
                         type: "bar",
-                        data: _.map(currentAreas, it => it.currentConfirmedCount),
+                        itemStyle: {
+                            normal: {
+                                color: "#F4646E",
+                            }
+                        },
+                        data: _.map(currentAreas, it => it.currentConfirmedCount)
                     },
                 ],
             })
