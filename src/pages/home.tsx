@@ -37,7 +37,7 @@ export const Home = () => {
                     <img src={PositionSvg} className="h-10 mr-4" />
                     <span className="flex items-center text-2xl">Hangzhou</span>
                 </div>
-                <span className="flex-1 align-middle">
+                <span className="flex-1 align-middle text-center">
                     新冠疫情实况大屏
                 </span>
                 <div className="flex flex-1 flex-col text-2xl">
