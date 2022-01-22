@@ -1,1 +1,1 @@
-export const fetcher = (url: RequestInfo) => fetch(url).then((res) => res.json());
+export const fetcher = (url: RequestInfo) => fetch(url, { mode: 'cors' }).then((res) => res.json());

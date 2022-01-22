@@ -3,6 +3,7 @@ import _ from "lodash";
 import dayjs from "dayjs";
 import useSWR from "swr";
 import PositionSvg from "../images/position.svg";
+import { fetcher } from "../util/rest";
 import "./home.scss";
 import { Chart1 } from "./chart/chrat-1";
 import { Chart2 } from "./chart/chrat-2";
@@ -11,8 +12,6 @@ import { Chart5 } from "./chart/chart-5";
 import { Chart6 } from "./chart/chart-6";
 import { Chart7 } from "./chart/chart-7";
 import { Chart4 } from "./chart/chart-4";
-
-const fetcher = (url: RequestInfo) => fetch(url).then((res) => res.json());
 
 export const Home = () => {
     const [date, setDate] = useState(dayjs());
@@ -23,7 +22,7 @@ export const Home = () => {
     }, [date]);
 
     const { data } = useSWR(
-        "api/area?latest=1&sort=currentConfirmedCount",
+        "https://lab.isaaclin.cn/nCoV/api/area?latest=1&sort=currentConfirmedCount",
         fetcher,
         {
             refreshInterval: 60 * 60 * 1000,
@@ -32,7 +31,7 @@ export const Home = () => {
     );
 
     const { data: data2 } = useSWR(
-        "api/overall",
+        "https://lab.isaaclin.cn/nCoV/api/overall",
         fetcher,
         {
             refreshInterval: 5 * 1000,
