@@ -34,7 +34,7 @@ export const Home = () => {
         "https://lab.isaaclin.cn/nCoV/api/overall",
         fetcher,
         {
-            refreshInterval: 5 * 1000,
+            refreshInterval: 30 * 1000,
             suspense: true,
         }
     );
