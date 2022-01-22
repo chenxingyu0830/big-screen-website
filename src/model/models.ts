@@ -7,6 +7,8 @@ export interface AreaInfo {
     /** 城市编号 */
     locationId: number;
     /** 大洲（英文）名称 */
+    continentName: any;
+    /** 大洲（英文）名称 */
     provinceName: string;
     /** 省份、地区或直辖市简称 */
     provinceShortName: string;
@@ -22,4 +24,17 @@ export interface AreaInfo {
     deadCount: number;
     /** 数据更新时间 */
     updateTime: number;
+    /** 城市 */
+    cities: Array<City>;
+    /** 国家名称 */
+    countryName: string;
+}
+
+export interface City {
+    /** 城市名称 */
+    cityName: string;
+    /** 现存确诊人数，值为confirmedCount - curedCount - deadCount */
+    currentConfirmedCount: number;
+    /** 累计确诊人数 */
+    confirmedCount: number;
 }

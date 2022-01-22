@@ -16,7 +16,8 @@ export const Chart2: React.FunctionComponent<ChindProps> = ({ data, ...restProps
     const [currentAreas, setCurrentAreas] = useState([]);
 
     useEffect(() => {
-        const areaChunks = _.chunk(data?.results, 8) ?? [];
+        const chinaInfo = _.filter(data?.results, it => it.countryName === "中国")
+        const areaChunks = _.chunk(chinaInfo, 6) ?? [];
         const currentAreas = areaChunks[indexRef.current];
 
         const timer = setInterval(() => {

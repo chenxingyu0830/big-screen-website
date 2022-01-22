@@ -1,10 +1,13 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { Suspense, useEffect, useMemo, useState } from "react";
 import dayjs from "dayjs";
 import useSWR from "swr";
 import PositionSvg from "../images/position.svg";
 import "./home.scss";
 import { Chart1 } from "./chart/chrat-1";
 import { Chart2 } from "./chart/chrat-2";
+import { Chart3 } from "./chart/chart-3";
+import _ from "lodash";
+import { Chart5 } from "./chart/chart-5";
 
 const fetcher = (url: RequestInfo) => fetch(url).then((res) => res.json());
 
@@ -16,10 +19,13 @@ export const Home = () => {
         }, 1000);
     }, [date]);
 
-    const { data, error } = useSWR(
-        "https://lab.isaaclin.cn/nCoV/api/area?countryEng=China",
+    const { data } = useSWR(
+        "api/area?latest=1&sort=currentConfirmedCount",
         fetcher,
-        { refreshInterval: 60 * 60 * 1000 }
+        {
+            refreshInterval: 60 * 60 * 1000,
+            suspense: true,
+        }
     );
 
     return (
@@ -47,20 +53,20 @@ export const Home = () => {
                     {useMemo(() => <Chart1 data={data} />, [data])}
                 </section>
                 <section className="section2">
-                    <div className="title">疑似感染人数</div>
+                    <div className="title">各省疑似感染人数统计</div>
                     {useMemo(() => <Chart2 data={data} />, [data])}
                 </section>
                 <section className="section3">
-                    <div className="title">测试</div>
-                    <div>123</div>
+                    <div className="title">七大州确诊人数统计</div>
+                    {useMemo(() => <Chart3 data={data} />, [data])}
                 </section>
                 <section className="section4">
                     {/* <div className="title">测试</div>
 					<div>123</div> */}
                 </section>
                 <section className="section5">
-                    <div className="title">测试</div>
-                    <div>123</div>
+                    <div className="title">浙江省各市确诊人数统计</div>
+                    {useMemo(() => <Chart5 data={data} />, [data])}
                 </section>
                 <section className="section6">
                     <div className="title">测试</div>

@@ -1,3 +1,5 @@
+@import "../util/helper.scss";
+
 main {
 	display: grid;
 	grid-template:
@@ -37,7 +39,7 @@ main {
 		font-size: 0.875rem;
 		position: relative;
 
-		> div.title {
+		div.title {
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -64,8 +66,40 @@ main {
 			}
 		}
 
-		> div:nth-child(2) {
+		div:nth-child(2) {
 			flex: 1;
 		}
+	}
+}
+
+.legend {
+	position: absolute;
+	top: px(60);
+	right: px(40);
+	height: px(40);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding-right: px(10);
+	> span {
+		display: inline-block;
+		width: px(16);
+		height: px(10);
+		border-radius: px(2);
+		margin: 0 px(10);
+	}
+
+	span.first {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background: linear-gradient(90deg, #2034f9 0, #04a1ff 100%);
+	}
+	span.second {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background: linear-gradient(90deg, #b92ae8 0, #6773e7 100%);
 	}
 }
