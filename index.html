@@ -8,11 +8,11 @@
 		<script>
 			const clientWidth = document.documentElement.clientWidth;
 			const clientHeight = document.documentElement.clientHeight;
-			const pageWidth =
+			window.pageWidth =
 				clientWidth / clientHeight > 16 / 9
 					? clientHeight * (16 / 9)
 					: clientWidth;
-			const pageHight = pageWidth / (16 / 9);
+			window.pageHight = pageWidth / (16 / 9);
 			document.write(`
 				<style>html{font-size: ${pageWidth / 100}px}</style>
 			`);
