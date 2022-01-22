@@ -4,11 +4,12 @@ import { Route } from 'react-router-dom';
 import { Home } from './pages/home';
 import { Config } from './pages/config';
 import { Suspense } from 'react';
+import backGorundBg from "./images/background.png";
 
 function App() {
 
     return (
-        <div className="flex flex-1 bg-background">
+        <div className="flex flex-1" style={{backgroundImage: `url(${backGorundBg})`}}>
             <HashRouter>
                 <Routes>
                     <Route path="/" element={(

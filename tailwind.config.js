@@ -3,9 +3,9 @@ module.exports = {
 	darkMode: false, // or 'media' or 'class'
 	theme: {
 		extend: {
-			backgroundImage: {
-				background: "url('src/images/background.png')",
-			},
+			// backgroundImage: {
+			// 	background: "url('src/images/background.png')",
+			// },
 		},
 	},
 	variants: {
