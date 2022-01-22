@@ -38,7 +38,7 @@ export const Home = () => {
                     <span className="flex items-center text-2xl">Hangzhou</span>
                 </div>
                 <span className="flex-1 align-middle">
-                    全国新冠疫情实时展示
+                    新冠疫情实况大屏
                 </span>
                 <div className="flex flex-1 flex-col text-2xl">
                     <div className="flex justify-end">
