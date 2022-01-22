@@ -13,11 +13,13 @@ export const Chart2: React.FunctionComponent<ChindProps> = ({ data, ...restProps
     const myChart = useRef(null);
     const indexRef = useRef(0);
 
-    const [currentAreas, setCurrentAreas] = useState([]);
+    const chinaInfo = _.filter(data?.results, it => it.countryName === "中国")
+    const areaChunks = _.chunk(chinaInfo, 6) ?? [];
+    const [currentAreas, setCurrentAreas] = useState(areaChunks[0]);
 
     useEffect(() => {
-        const chinaInfo = _.filter(data?.results, it => it.countryName === "中国")
-        const areaChunks = _.chunk(chinaInfo, 6) ?? [];
+        myChart.current = echarts.init(divRef.current);
+
         const currentAreas = areaChunks[indexRef.current];
 
         const timer = setInterval(() => {
