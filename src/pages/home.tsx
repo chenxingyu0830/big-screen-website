@@ -10,6 +10,7 @@ import { Chart3 } from "./chart/chart-3";
 import { Chart5 } from "./chart/chart-5";
 import { Chart6 } from "./chart/chart-6";
 import { Chart7 } from "./chart/chart-7";
+import { Chart4 } from "./chart/chart-4";
 
 const fetcher = (url: RequestInfo) => fetch(url).then((res) => res.json());
 
@@ -26,6 +27,15 @@ export const Home = () => {
         fetcher,
         {
             refreshInterval: 60 * 60 * 1000,
+            suspense: true,
+        }
+    );
+
+    const { data: data2 } = useSWR(
+        "api/overall",
+        fetcher,
+        {
+            refreshInterval: 5 * 1000,
             suspense: true,
         }
     );
@@ -62,9 +72,8 @@ export const Home = () => {
                     <div className="title">七大州确诊人数统计</div>
                     {useMemo(() => <Chart3 data={data} />, [data])}
                 </section>
-                <section className="section4">
-                    {/* <div className="title">测试</div>
-					<div>123</div> */}
+                <section className="section4 ">
+                    {useMemo(() => <Chart4 data={data2} />, [data2])}
                 </section>
                 <section className="section5">
                     <div className="title">浙江省各市确诊人数统计</div>
