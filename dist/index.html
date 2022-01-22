@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>大屏可视化项目</title>
+		<script>
+			const clientWidth = document.documentElement.clientWidth;
+			const clientHeight = document.documentElement.clientHeight;
+			window.pageWidth =
+				clientWidth / clientHeight > 16 / 9
+					? clientHeight * (16 / 9)
+					: clientWidth;
+			window.pageHight = pageWidth / (16 / 9);
+			document.write(`
+				<style>html{font-size: ${pageWidth / 100}px}</style>
+			`);
+		</script>
+		<script type="module" crossorigin src="./assets/index.bb1708b7.js"></script>
+		<link rel="modulepreload" href="./assets/vendor.d9866a84.js">
+		<link rel="stylesheet" href="./assets/index.9cd8f34c.css">
+	</head>
+	<body>
+		<div id="root"></div>
+		<script>
+			const root = document.querySelector("#root");
+			root.style.width = pageWidth + "px";
+			root.style.height = pageHight + "px";
+			root.style.marginTop = (clientHeight - pageHight) / 2 + "px";
+		</script>
+		
+	</body>
+</html>
