@@ -15,7 +15,7 @@ export const Chart7: React.FunctionComponent<ChindProps> = ({ data, ...restProps
 
     const citys = _.chain(data?.results)
         .orderBy("currentConfirmedCount", "desc")
-        .take(6)
+        .take(5)
         .map(c => {
             return {
                 name: c.countryName,
