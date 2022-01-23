@@ -9,7 +9,7 @@ import backGorundBg from "./images/background.png";
 function App() {
 
     return (
-        <div className="flex flex-1" style={{backgroundImage: `url(${backGorundBg})`}}>
+        <div className="flex flex-1 bg-cover" style={{backgroundImage: `url(${backGorundBg})`}}>
             <HashRouter>
                 <Routes>
                     <Route path="/" element={(
