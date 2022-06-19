@@ -84,6 +84,5 @@ export const Chart1: React.FunctionComponent<ChindProps> = ({ data, ...restProps
         );
     }
 
-
     return <div ref={divRef} className="chart" />;
 };

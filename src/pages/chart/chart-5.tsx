@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
 import { createEchartsOptions } from '../../util/create-echarts-options';
 import { px } from '../../util/helper';
-import { City, CountryInfo } from '../../model/Models';
+import { CountryInfo } from '../../model/Models';
 import _ from 'lodash';
 
 interface ChindProps {
@@ -16,22 +16,23 @@ export const Chart5: React.FunctionComponent<ChindProps> = ({ data, ...restProps
     const zhejiangInfo = _.find(data?.results, it => it.provinceShortName === "浙江");
     const allCount = _.sum(_.map(zhejiangInfo?.cities, c => c.currentConfirmedCount));
     const citys = _.chain(zhejiangInfo?.cities)
+        .take(6)
         .map(c => {
             return {
                 name: c.cityName,
-                value: _.floor(c.currentConfirmedCount / allCount * 100, 2),
+                value: _.floor(c.currentConfirmedCount / allCount, 2),
             }
         })
         .filter(it => it.value > 0)
         .value()
 
     useEffect(() => {
-        myChart.current = echarts.init(divRef.current);
+        myChart.current = echarts.init(divRef.current!);
         getChart(citys);
     }, []);
 
     const getChart = (citys: Array<{ name: string, value: number }>) => {
-        var myChart = echarts.init(divRef.current);
+        var myChart = echarts.init(divRef.current!);
         myChart.setOption(
             createEchartsOptions({
                 xAxis: { show: false },
