@@ -24,7 +24,7 @@ const Header = () => {
       console.log("result", result) // {center: O, {lng: 120.161693, lat: 30.280059},code: 179,level: 12,name: "杭州市"}}
       setCityName(cityName);
     }
-    var myCity = new (BMap).LocalCity();
+    var myCity = new BMap.LocalCity();
     myCity.get(myFun);
   }
 
