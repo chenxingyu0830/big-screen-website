@@ -1201,7 +1201,7 @@ esbuild-windows-arm64@0.14.46:
   resolved "https://registry.npmjs.org/esbuild-windows-arm64/-/esbuild-windows-arm64-0.14.46.tgz#b8aa66a0c347342b9ae780b537d5574e9691c123"
   integrity sha512-VEzMy6bM60/HT/URTDElyhfi2Pk0quCCrEhRlI4MRno/AIqYUGw0rZwkPl6PeoqVI6BgoBHGY576GWTiPmshCA==
 
-esbuild@^0.14.43:
+esbuild@^0.14.27:
   version "0.14.46"
   resolved "https://registry.npmjs.org/esbuild/-/esbuild-0.14.46.tgz#d548cfc13fecfd4bc074ce38e0122d1dd9b067db"
   integrity sha512-vdm5G1JdZBktva8dwQci/s44VbeBUg8g907xoZx77mqFZ4gU5GlMULNsdGeID+qXCXocsfYSGtE0LvqH3eiNQg==
@@ -1952,7 +1952,7 @@ postcss@^8.3.5:
     picocolors "^1.0.0"
     source-map-js "^1.0.1"
 
-postcss@^8.4.14:
+postcss@^8.4.13:
   version "8.4.14"
   resolved "https://registry.npmjs.org/postcss/-/postcss-8.4.14.tgz#ee9274d5622b4858c1007a74d76e42e56fd21caf"
   integrity sha512-E398TUmfAYFPBSdzgeieK2Y1+1cpdxJx8yXbK/m57nRhKSmk1GB2tO4lbLBtlkfPQTDKfe4Xqv1ASWPpayPEig==
@@ -2102,7 +2102,7 @@ rimraf@^3.0.0:
   dependencies:
     glob "^7.1.3"
 
-rollup@^2.75.6:
+rollup@^2.59.0:
   version "2.75.6"
   resolved "https://registry.npmjs.org/rollup/-/rollup-2.75.6.tgz#ac4dc8600f95942a0180f61c7c9d6200e374b439"
   integrity sha512-OEf0TgpC9vU6WGROJIk1JA3LR5vk/yvqlzxqdrE2CzzXnqKXNzbAwlWUXis8RS3ZPe7LAq+YUxsRa0l3r27MLA==
@@ -2383,15 +2383,15 @@ vite-plugin-react-svg@^0.2.0:
     "@svgr/plugin-jsx" "^5.5.0"
     "@svgr/plugin-svgo" "^5.5.0"
 
-vite@^3.0.0-alpha.13:
-  version "3.0.0-alpha.13"
-  resolved "https://registry.npmjs.org/vite/-/vite-3.0.0-alpha.13.tgz#eb989328d264ae086778e22f341a2af4593268f4"
-  integrity sha512-HdGt0jMfgUbOYA5fFLSABpq7JTpoG4kZUMQadUbmJp9VIwAq6yzxKvfY9YFOXFWcUWzEzFQcMMfRsIqW5Ory9A==
+vite@^2.9.12:
+  version "2.9.12"
+  resolved "https://registry.npmjs.org/vite/-/vite-2.9.12.tgz#b1d636b0a8ac636afe9d83e3792d4895509a941b"
+  integrity sha512-suxC36dQo9Rq1qMB2qiRorNJtJAdxguu5TMvBHOc/F370KvqAe9t48vYp+/TbPKRNrMh/J55tOUmkuIqstZaew==
   dependencies:
-    esbuild "^0.14.43"
-    postcss "^8.4.14"
+    esbuild "^0.14.27"
+    postcss "^8.4.13"
     resolve "^1.22.0"
-    rollup "^2.75.6"
+    rollup "^2.59.0"
   optionalDependencies:
     fsevents "~2.3.2"
 
