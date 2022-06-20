@@ -16,7 +16,7 @@ export const Chart5: React.FunctionComponent<ChindProps> = ({ data, ...restProps
     const zhejiangInfo = _.find(data?.results, it => it.provinceShortName === "浙江");
     const allCount = _.sum(_.map(zhejiangInfo?.cities, c => c.currentConfirmedCount));
     const citys = _.chain(zhejiangInfo?.cities)
-        .take(6)
+        .take(5)
         .map(c => {
             return {
                 name: c.cityName,
