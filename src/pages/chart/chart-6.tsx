@@ -15,12 +15,12 @@ export const Chart6: React.FunctionComponent<ChindProps> = ({ data, ...restProps
 
 
     const zhejiangInfo = _.find(data?.results, it => it.provinceShortName === "浙江");
-    const hangzhouInfo = _.find(zhejiangInfo.cities, c => c.cityEnglishName === "Hangzhou");
+    const hangzhouInfo = _.find(zhejiangInfo.cities, c => c.cityEnglishName === "杭州");
     const arr = [
-        { name: "累计确诊人数", value: hangzhouInfo.confirmedCount },
-        { name: "现存确诊人数", value: hangzhouInfo.currentConfirmedCount },
-        { name: "治愈人数", value: hangzhouInfo.curedCount },
-        { name: "死亡人数", value: hangzhouInfo.deadCount },
+        { name: "累计确诊人数", value: hangzhouInfo?.confirmedCount },
+        { name: "现存确诊人数", value: hangzhouInfo?.currentConfirmedCount },
+        { name: "治愈人数", value: hangzhouInfo?.curedCount },
+        { name: "死亡人数", value: hangzhouInfo?.deadCount },
     ]
 
     useEffect(() => {

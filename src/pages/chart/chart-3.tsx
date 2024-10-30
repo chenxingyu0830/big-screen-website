@@ -42,10 +42,10 @@ export const Chart3: React.FunctionComponent<ChindProps> = ({ data, ...restProps
                     boundaryGap: [0, 0.01],
                     axisTick: { show: false },
                     type: 'category',
-                    data: _.map(continentGroups, g => _.first(g).continentName),
+                    data: _.map(continentGroups, g => _.first(g)?.continentName),
                     axisLabel: {
                         formatter(val) {
-                            if (val.length > 2) {
+                            if (val?.length > 2) {
                                 const array = val.split("");
                                 array.splice(2, 0, "\n");
                                 return array.join("");
@@ -59,7 +59,7 @@ export const Chart3: React.FunctionComponent<ChindProps> = ({ data, ...restProps
                     {
                         name: '各州数量第一',
                         type: 'bar',
-                        data: _.map(continentGroups, g => _.first(g).currentConfirmedCount),
+                        data: _.map(continentGroups, g => _.first(g)?.currentConfirmedCount),
                         itemStyle: {
                             normal: {
                                 color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
@@ -76,7 +76,7 @@ export const Chart3: React.FunctionComponent<ChindProps> = ({ data, ...restProps
                     {
                         name: '各州数量第二',
                         type: 'bar',
-                        data: _.map(continentGroups, g => _.last(g).currentConfirmedCount),
+                        data: _.map(continentGroups, g => _.last(g)?.currentConfirmedCount),
                         itemStyle: {
                             normal: {
                                 color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{

@@ -82,11 +82,11 @@ export const Chart4: React.FunctionComponent<ChindProps> = ({ data, ...restProps
         <div className="flex flex-1 flex-col">
             <div className='flex flex-1 justify-evenly items-center'>
                 <div className="formWrapper">
-                    <p>{overAll.confirmedCount}</p>
+                    <p>{overAll?.confirmedCount}</p>
                     <p className="text-base pt-2">累计确诊人数</p>
                 </div>
                 <div className="formWrapper">
-                    <p>{overAll.curedCount}</p>
+                    <p>{overAll?.curedCount}</p>
                     <p className="text-base pt-2">治愈人数</p>
                 </div>
                 <div className="formWrapper">
@@ -105,7 +105,8 @@ export const Chart4: React.FunctionComponent<ChindProps> = ({ data, ...restProps
                     <div className="ring">
                         <div className="radar" />
                     </div>
-                    <p>{`数据实时更新，最新时间为 ${dayjs(overAll.updateTime).format("YYYY-MM-DD HH:mm:ss")}`}</p>
+                    <p className='gray'>{`数据实时更新，最新时间为 ${dayjs(overAll.updateTime).format("YYYY-MM-DD HH:mm:ss")}`}</p>
+                    <p className='red'>由于丁香园接口已经下线，2024年开始无法同步疫情实时数据，目前使用假数据</p>
                 </div>
                 <div className="notes">此地图仅显示了中国的部分区域</div>
             </div>
